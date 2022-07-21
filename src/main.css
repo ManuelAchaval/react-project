@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: brown;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
