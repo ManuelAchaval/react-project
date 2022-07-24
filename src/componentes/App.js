@@ -1,4 +1,5 @@
 import Main from "./Main";
+import Nav from "./Navbar";
 import Footer from "./Footer";
 
 function App() {
@@ -7,10 +8,7 @@ function App() {
             <h1>
                 Hola mundo, esto es REACT
             </h1>
-            <nav id="nav"><ul>
-                <li>Inicio</li>
-                <li>contacto</li>
-            </ul></nav>
+            <Nav type="header"/>
         </header>
         <Main/>
         <Footer/>
