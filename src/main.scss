@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    text-align: center;
+}
+
+#header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: brown;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer{
+    border-top-width: 1px;
+    border-style:groove ;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+body{
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}

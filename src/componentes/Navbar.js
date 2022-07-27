@@ -2,9 +2,9 @@ import CartWidget from "./CartWidget"
 const Nav =(param)=>{
     if (param.type ==="header"){
         return(<nav class="d-flex justify-content-evenly">
-            <a href="http://">Link de nav</a>
-            <a href="http://">Link de nav1</a>
-            <a href="http://">Link de nav2</a>
+            <a href="http://">Listado</a>
+            <a href="http://">Sobre nosotros</a>
+            <a href="http://">Contacto</a>
             <div><CartWidget/></div>
         </nav>)
     }else{return(

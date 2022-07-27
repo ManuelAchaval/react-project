@@ -6,11 +6,12 @@ function App() {
     return (
         <><header id="header">
             <h1>
-                Hola mundo, esto es REACT
+                E-commerce con REACT
             </h1>
             <Nav type="header"/>
         </header>
         <Main/>
+        
         <Footer/>
         </>)
 }

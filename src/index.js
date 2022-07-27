@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './componentes/App';
-import './main.css'
+import './main.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
