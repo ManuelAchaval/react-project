@@ -1,18 +1,14 @@
-import Main from "./Main";
+import ItemListContainer from "./ItemListContainer";
 import Nav from "./Navbar";
 import Footer from "./Footer";
 
+
 function App() {
     return (
-        <><header id="header">
-            <h1>
-                E-commerce con REACT
-            </h1>
-            <Nav type="header"/>
-        </header>
-        <Main/>
-        
-        <Footer/>
+        <>
+            <Nav type="header" classname="header" />
+            <ItemListContainer greeting={"Bienvenido al sitio"}/>
+            <Footer />
         </>)
 }
 

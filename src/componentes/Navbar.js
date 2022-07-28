@@ -1,7 +1,10 @@
 import CartWidget from "./CartWidget"
 const Nav =(param)=>{
     if (param.type ==="header"){
-        return(<nav class="d-flex justify-content-evenly">
+        return(<nav class="d-flex justify-content-evenly" id="header">
+            <h1>
+                E-commerce con REACT
+            </h1>
             <a href="http://">Listado</a>
             <a href="http://">Sobre nosotros</a>
             <a href="http://">Contacto</a>
