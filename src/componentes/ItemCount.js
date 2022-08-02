@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ItemCount.scss'
 import { useState } from 'react';
-const ItemCount = ({ stock, inicial }) => {
+const ItemCount = ({ stock, inicial, onAdd }) => {
     const [resultado, setContador] = useState(inicial);
     console.log(resultado)
     const aumento = () => {
@@ -17,6 +17,10 @@ const ItemCount = ({ stock, inicial }) => {
         }
     }
 
+    const confirmar = ()=>{
+        console.log("onAdd")
+    }
+
     return (
         <><div className='d-flex flex-column justify-content-center'>
             <p>ItemNombre</p>
@@ -26,7 +30,7 @@ const ItemCount = ({ stock, inicial }) => {
                 <button onClick={aumento} className="p-2 text-bg-primary btn">+</button>
             </div>
             <div>
-                <button className='w-25 p-3 btn btn-success'>Agregar al carrito</button>
+                <button className='w-25 p-3 btn btn-success' onClick={confirmar}>Agregar al carrito</button>
             </div>
         </div>
         </>
