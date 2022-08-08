@@ -5,7 +5,7 @@ const Nav =(param)=>{
             <h1>
                 E-commerce con REACT
             </h1>
-            <a href="http://">Listado</a>
+            <a href="#listado">Listado</a>
             <a href="http://">Sobre nosotros</a>
             <a href="http://">Contacto</a>
             <div><CartWidget/></div>
