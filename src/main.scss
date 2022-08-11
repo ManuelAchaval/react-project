@@ -25,10 +25,24 @@ footer{
 }
 
 img{
-    width: 100%;
+    width: 50%;
     height: auto;
+    align-self: center;
 }
 
 body{
     background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+/***********************clases******************************/
+.item{
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.item__h1{
+    padding: 10px;
 }

@@ -1,11 +1,10 @@
 import Item from "./Item";
-import ItemCount from "./ItemCount";
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const ItemList = ({ mostrar }) => {
 
-console.log(mostrar)
 
 
 
