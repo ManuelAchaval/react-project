@@ -1,20 +1,23 @@
-import ItemDetail from './ItemDetail'
+import ItemDetail from '../itemDetail/ItemDetail'
 import { useEffect, useState } from 'react'
-import { customFetch } from '../assets/customFetch'
-import { productos } from '../assets/productos'
+import { customFetch } from '../../assets/customFetch'
+import { productos } from '../../assets/productos'
 import { Spinner } from "react-bootstrap";
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
     const [listProducts, setListProducts] = useState({})
     const [loading, setLoading] = useState(false)
+    const {id}=useParams()
 
     useEffect(() => {
 
         customFetch(productos)
             .then(res=> {
+                console.log(res)
                 setLoading(true)
-                setListProducts(res.find(item=> item.id===1))})
-        
+                setListProducts(res.find(item=> item.id==id))
+            })
     },[])
     
 

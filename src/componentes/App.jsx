@@ -1,16 +1,16 @@
-import ItemListContainer from "./ItemListContainer";
-import Nav from "./Navbar";
-import Footer from "./Footer";
-import ItemDetailContainer from "./ItemDetailContainer";
+import Nav from "./nav/Navbar";
+import Footer from "./footer/Footer";
+import { BrowserRouter } from "react-router-dom";
+import Main from "./Main/Main";
 
 function App() {
     return (
-        <>
+        <BrowserRouter>
             <Nav type="header" classname="header" />
-            <ItemListContainer greeting={"Bienvenido al sitio"}/>
-            <ItemDetailContainer/>
+            <Main/>
             <Footer />
-        </>)
+        </BrowserRouter>
+        )
 }
 
 export default App;

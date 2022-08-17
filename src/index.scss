@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    text-align: center;
+    
+}
+html , body , #root {
+    height: 100%;
+}
+
+main{
+    padding: 1rem;
+    flex-grow: 1;
+    background: linear-gradient(to top, #e9f1fa 0%, #e7f0fd 100%);
+}
+#root {
+    display: flex;
+    flex-direction: column;
+}
+#header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+footer{
+    border-top-width: 1px;
+    border-style:groove ;
+    background: black;
+}
+
+img{
+    width: 50%;
+    height: auto;
+    align-self: center;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    background-image: linear-gradient(white, grey);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+// body{
+//     background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); //february ink
+// //linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); el original
+// //linear-gradient(15deg, #13547a 0%, #80d0c7 100%) ;aquasplash
+// //linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);kind steel
+// }

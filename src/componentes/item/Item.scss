@@ -1,0 +1,33 @@
+.item{
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    margin: 5px;
+    max-width: 20rem;
+    max-height:30rem;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+}
+
+.item__h1{
+    padding: 10px;
+}
+
+.boton-detalle{
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        background-color: lightblue;
+    }
+}
