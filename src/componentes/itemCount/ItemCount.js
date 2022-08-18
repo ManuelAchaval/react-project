@@ -18,9 +18,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
         }
     }
 
-    const confirmar = ()=>{
-        console.log(resultado)
-    }
+
 
     return (
         <><div className='d-flex flex-column justify-content-center'>
@@ -31,7 +29,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
                 <button onClick={aumento} className="p-2 text-bg-primary btn">+</button>
             </div>
             <div>
-                <button className=' p-3 m-3 btn btn-success' onClick={confirmar}>Agregar al carrito</button>
+                <button className=' p-3 m-3 btn btn-success' onClick={onAdd} >Agregar al carrito</button>
             </div>
         </div>
         </>

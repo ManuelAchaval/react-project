@@ -1,7 +1,10 @@
 import CartWidget from "../cartWidget/CartWidget"
 import { Link, NavLink } from "react-router-dom"
 import'./navBar.scss'
+
+
 const Nav = (param) => {
+
     if (param.type === "header") {
         return (<nav className="d-flex justify-content-evenly" id="header">
             <NavLink className="blanco" to="/">
@@ -12,7 +15,7 @@ const Nav = (param) => {
 
             <NavLink className="blanco" to="/">Listado</NavLink>
             <NavLink className="blanco" to="/categoria/Deporte">Deporte</NavLink>
-            <NavLink className="blanco" to="/categoria/Tecnologia">Tecnología</NavLink>
+            <NavLink className="blanco" to="/categoria/tecnologia">Tecnología</NavLink>
             <NavLink className="blanco" to="/cart"><CartWidget /></NavLink>
         </nav>)
     } else {

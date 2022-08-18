@@ -14,7 +14,6 @@ const ItemDetailContainer = () => {
 
         customFetch(productos)
             .then(res=> {
-                console.log(res)
                 setLoading(true)
                 setListProducts(res.find(item=> item.id==id))
             })

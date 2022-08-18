@@ -5,32 +5,34 @@ import ItemList from '../itemList/ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom"
-
+import Page from "../pagina/Page";
 
 const ItemListContainer = ({ greeting }) => {
     const [mostrar, setMostrar] = useState([])
-    const [loading, setLoading] = useState(false)
-    const {categoriaId} =useParams()
-    
+    const [loading, setLoading] = useState(true)
+    const { categoria } = useParams()
+
 
     useEffect(() => {
         customFetch(productos)
             .then(res => {
-                setLoading(true)
+                setLoading(false)
                 setMostrar(res)
                 
             })
-    },[])
+    }, [])
 
 
-
-    return (
-        <div className="d-flex flex-column">
+    if (loading) {
+        return (<>
             <h2>{greeting}</h2>
-            {!loading && <Spinner animation="border" role="status" className="align-self-center"><span className="visually-hidden  ">Loading...</span>
-            </Spinner>}
-            {loading && <ItemList mostrar={mostrar} />}
-        </div>
-    )
-}
-export default ItemListContainer
+            <Spinner animation="border" role="status" className="align-self-center"><span className="visually-hidden  ">Loading...</span>
+            </Spinner>
+        </>)
+    } else {
+        return (<Page titulo="Nuetros Productos" subtitulo="Catálogo" >
+            <ItemList mostrar={mostrar} />
+            </Page >)
+    }}
+
+            export default ItemListContainer

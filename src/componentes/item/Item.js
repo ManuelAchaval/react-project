@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useParams } from 'react-router-dom'
+
 import './Item.scss'
 import { Link } from "react-router-dom";
 
 const Item = ({ producto }) => {
 
-    const {id} =useParams()
+
 
     return (
         <>
