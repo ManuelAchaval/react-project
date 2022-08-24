@@ -15,6 +15,7 @@ const ItemDetail = ({ listProducts }) => {
         listProducts.cantidad= contador
         console.log(contador)
         agregarCarrito(listProducts)
+        
     }
     
     return (
