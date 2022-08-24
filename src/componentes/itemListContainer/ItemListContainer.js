@@ -18,9 +18,11 @@ const ItemListContainer = ({ greeting }) => {
             .then(res => {
                 setLoading(false)
                 setMostrar(res)
-                
             })
-    }, [])
+            if (categoria){
+                setMostrar(mostrar.filter(item=>item.categoria===categoria))
+            }
+    }, [categoria])
 
 
     if (loading) {

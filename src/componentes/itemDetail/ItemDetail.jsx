@@ -2,10 +2,21 @@ import "./itemDetail.scss"
 import ItemCount from "../itemCount/ItemCount"
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { contexto } from "../CustomProvider"
+
 
 const ItemDetail = ({ listProducts }) => {
     const [seAgrego, setSeAgrego]= useState(false)
-    const onAdd=()=>{setSeAgrego(true)}
+    const {agregarCarrito}=useContext(contexto)
+
+    const onAdd=(contador)=>{
+        setSeAgrego(true)
+        listProducts.cantidad= contador
+        console.log(contador)
+        agregarCarrito(listProducts)
+    }
+    
     return (
         <div className="cont">
             <h1 className="cont_cosas">{listProducts.productName}</h1>

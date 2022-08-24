@@ -16,7 +16,7 @@ const Nav = (param) => {
             <NavLink className="blanco" to="/">Listado</NavLink>
             <NavLink className="blanco" to="/categoria/Deporte">Deporte</NavLink>
             <NavLink className="blanco" to="/categoria/tecnologia">Tecnología</NavLink>
-            <NavLink className="blanco" to="/cart"><CartWidget /></NavLink>
+            <CartWidget />
         </nav>)
     } else {
         return (
