@@ -13,7 +13,7 @@ const CustomProvider = (props) => {
 
 
     const isInCart = ((id) => {
-        return carrito.some(c=> c.id === id)
+        return carrito.some(c => c.id === id)
     })
 
 
@@ -33,15 +33,25 @@ const CustomProvider = (props) => {
     // 
     //     setCarrito(producto)
 
-    console.log(carrito)
+    const eliminarItem = (id) => {
+        return setCarrito(carrito.filter(element => element.id !== id))
+    }
+
     const eliminarCarrito = () => {
         setCarrito([])
+        setCantidad(0)
+    }
+
+    const getItemPrice = () => {
+        return carrito.reduce((acc, x) => acc += x.cantidad * x.price, 0)
     }
     const valorDeContexto = {
         cantidad: cantidad,
         carrito: carrito,
         agregarCarrito,
         eliminarCarrito,
+        eliminarItem,
+        getItemPrice,
     }
 
     return (

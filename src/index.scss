@@ -59,3 +59,15 @@ a{
 // //linear-gradient(15deg, #13547a 0%, #80d0c7 100%) ;aquasplash
 // //linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);kind steel
 // }
+
+.carrito{
+width: 50%;
+padding: 2%;
+-webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    margin-right: 25%;
+    margin-left: 25%;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
