@@ -7,12 +7,12 @@ const Checkout = () => {
     const { carrito, getItemPrice } = useContext(contexto)
     const carlos = useNavigate()
     const { cliente, setCliente } = useState({
-        name: '',
-        lastname: '',
-        email: '',
-        address: '',
+        name: "",
+        lastname: "",
+        email: "",
+        address: "",
     })
-
+console.log(cliente)
     const handlerChangeInput = (e) => {
         // setCliente({...cliente,
         //     [e.target.name]: e.target.value,
@@ -21,9 +21,9 @@ const Checkout = () => {
         console.log(cliente)
     }
 
-    const handlerSubmit = () => {
+    // const handlerSubmit = () => {
 
-    }
+    // }
 
     if (carrito.length === 0) {
         setTimeout(() => {

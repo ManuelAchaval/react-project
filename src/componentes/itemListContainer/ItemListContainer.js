@@ -6,6 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom"
 import Page from "../pagina/Page";
+import { db } from "../Firebase";
+import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
+
+
+
 
 const ItemListContainer = ({ greeting }) => {
     const [mostrar, setMostrar] = useState([])
@@ -14,14 +19,29 @@ const ItemListContainer = ({ greeting }) => {
 
 
     useEffect(() => {
-        customFetch(productos)
-            .then(res => {
+        const productosCollection = collection(db, "productos")
+        const consulta = getDocs(productosCollection)
+        console.log(consulta)
+        consulta
+            .then(snapshot => {
+                const product = snapshot.docs.map(doc => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                })
+                setMostrar(product)
                 setLoading(false)
-                setMostrar(res)
             })
-            if (categoria){
-                setMostrar(mostrar.filter(item=>item.categoria===categoria))
-            }
+
+
+        if (categoria == "tecnologia") {
+            const q = query(collection(db, "productos"), where("categoria", "==", "tecnologia"));
+            getDocs(q).then((snapshot) => { setMostrar(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))) })
+        } if (categoria == "Deporte") {
+            const q = query(collection(db, "productos"), where("categoria", "==", "Deporte"));
+            getDocs(q).then((snapshot) => { setMostrar(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))) })
+        }
     }, [categoria])
 
 
@@ -34,7 +54,8 @@ const ItemListContainer = ({ greeting }) => {
     } else {
         return (<Page titulo="Nuetros Productos" subtitulo="Catálogo" >
             <ItemList mostrar={mostrar} />
-            </Page >)
-    }}
+        </Page >)
+    }
+}
 
-            export default ItemListContainer
+export default ItemListContainer

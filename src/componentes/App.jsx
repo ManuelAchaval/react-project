@@ -3,7 +3,7 @@ import Footer from "./footer/Footer";
 import { BrowserRouter } from "react-router-dom";
 import Main from "./Main/Main";
 import CustomProvider from "./CustomProvider";
-
+import "./Firebase"
 
 function App() {
     return (
