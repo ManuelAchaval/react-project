@@ -1,29 +1,29 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { contexto } from '../CustomProvider'
-
+import {db} from '../Firebase'
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
 const Checkout = () => {
     const { carrito, getItemPrice } = useContext(contexto)
     const carlos = useNavigate()
-    const { cliente, setCliente } = useState({
-        name: "",
-        lastname: "",
-        email: "",
-        address: "",
+    const [costumer, setCostumer] = useState({
+        name: '',
+        lastname: '',
+        email: '',
+        address: '',
     })
-console.log(cliente)
+
+
+
     const handlerChangeInput = (e) => {
-        // setCliente({...cliente,
-        //     [e.target.name]: e.target.value,
-        // })
-        console.log(e.target)
-        console.log(cliente)
+        setCostumer({
+            ...costumer,
+            [e.target.name]: e.target.value,
+        })
+
     }
 
-    // const handlerSubmit = () => {
-
-    // }
 
     if (carrito.length === 0) {
         setTimeout(() => {
@@ -35,12 +35,27 @@ console.log(cliente)
     }
     const confirmaCompra = (e) => {
         e.preventDefault()
-        const orden ={
+        const orden = {
             items: carrito,
+            buyer: { ...costumer },
             price: getItemPrice(),
+            date: serverTimestamp()
         }
+        const ordersCollection = collection(db, "ordenes")
+        const consulta = addDoc(ordersCollection, orden)
+        consulta
+            .then((res) => {
+                alert(`Orden ${res.id} creada con exito! Precio total: $ ${getItemPrice()}`)
+            })
+            .catch(error => {
+                console.log(error)
+            })
         console.log(orden)
     }
+
+
+
+
     return (
         <div>
             <h1>Checkout</h1>
@@ -50,14 +65,15 @@ console.log(cliente)
                     <input
                         placeholder='Nombre'
                         name="name"
-
+                        value={costumer.name}
                         onChange={handlerChangeInput} />
-                    <input onChange={handlerChangeInput} placeholder='Apellido' name='lastname' />
-                    <input onChange={handlerChangeInput} placeholder='Direccion' name='address' />
-                    <input onChange={handlerChangeInput} placeholder='Email' name='email' />
+                    <input
+                        onChange={handlerChangeInput} value={costumer.lastname} placeholder='Apellido' name='lastname' />
+                    <input onChange={handlerChangeInput} value={costumer.address} placeholder='Direccion' name='address' />
+                    <input onChange={handlerChangeInput} value={costumer.email} placeholder='Email' name='email' />
                 </form>
                 <button className='btn btn-success' onClick={confirmaCompra} type="submit">Confirmar compra</button>
-            <hr />
+                <hr />
 
             </div>
         </div>

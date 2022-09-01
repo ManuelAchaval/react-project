@@ -39,13 +39,7 @@ const Cart = () => {
         </>)
     }
 
-    // const handleClick=(e)=>{
-    //     console.log(e)
-    //     console.log(e.target)
-    // } 
-    // const handleChange =(e) =>{
-    //     console.log(e)
-    // }
+
     return (
         <Page titulo="Carrito" subtitulo="Tus compras" >
             <h1> Nada por aqui...</h1>
