@@ -20,9 +20,9 @@ const Nav = (param) => {
         </nav>)
     } else {
         return (
-            <nav>
-                <Link className="blanco" to="http://">Linkedin</Link>
-                <Link className="blanco" to="http://">Github</Link>
+            <nav className="d-flex justify-content-around p-3">
+                <Link className="blanco" to="https://www.linkedin.com/in/manuel-ach%C3%A1val-9a2717158/">Linkedin</Link>
+                <Link className="blanco" to="https://github.com/ManuelAchaval">Github</Link>
                 <Link className="blanco" to="http://">Mi whatsapp</Link>
             </nav>
         )
