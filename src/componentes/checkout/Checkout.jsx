@@ -5,7 +5,7 @@ import {db} from '../Firebase'
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
 const Checkout = () => {
-    const { carrito, getItemPrice } = useContext(contexto)
+    const { carrito, getItemPrice, eliminarCarrito } = useContext(contexto)
     const carlos = useNavigate()
     const [costumer, setCostumer] = useState({
         name: '',
@@ -35,17 +35,19 @@ const Checkout = () => {
     }
     const confirmaCompra = (e) => {
         e.preventDefault()
+        eliminarCarrito()
         const orden = {
             items: carrito,
             buyer: { ...costumer },
             price: getItemPrice(),
             date: serverTimestamp()
         }
+        
         const ordersCollection = collection(db, "ordenes")
         const consulta = addDoc(ordersCollection, orden)
         consulta
             .then((res) => {
-                alert(`Orden ${res.id} creada con exito! Precio total: $ ${getItemPrice()}`)
+                alert(`Orden con ID: ${res.id} creada con exito! Precio total: $ ${getItemPrice()}`)
             })
             .catch(error => {
                 console.log(error)

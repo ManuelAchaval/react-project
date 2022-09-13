@@ -14,7 +14,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
         setContador(contador - 1)
         if (contador <= 0) {
             setContador(0)
-            console.log("Ya no hay más")
+            alert("Ya no hay más")
         }
     }
 

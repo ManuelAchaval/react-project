@@ -1,11 +1,10 @@
 import ItemDetail from '../itemDetail/ItemDetail'
 import { useEffect, useState } from 'react'
-import { customFetch } from '../../assets/customFetch'
-import { productos } from '../../assets/productos'
+
 import { Spinner } from "react-bootstrap";
 import { useParams } from 'react-router-dom'
 import { db } from "../Firebase";
-import { collection, getDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [listProducts, setListProducts] = useState({})
@@ -24,12 +23,12 @@ const ItemDetailContainer = () => {
                         id: doc.id
                     }
                 })
-                setListProducts(product.find(item => item.id == id))
+                setListProducts(product.find(item => item.id === id))
                 setLoading(true)
 
             })
         
-    }, [])
+    }, [id])
 
 
     return (

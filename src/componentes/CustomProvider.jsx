@@ -30,11 +30,11 @@ const CustomProvider = (props) => {
             setCantidad(cantidad + producto.cantidad);
         }
     }
-    // 
-    //     setCarrito(producto)
+
 
     const eliminarItem = (id) => {
         return setCarrito(carrito.filter(element => element.id !== id))
+        
     }
 
     const eliminarCarrito = () => {

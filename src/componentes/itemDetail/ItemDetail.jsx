@@ -13,7 +13,7 @@ const ItemDetail = ({ listProducts }) => {
     const onAdd=(contador)=>{
         setSeAgrego(true)
         listProducts.cantidad= contador
-        console.log(contador)
+
         agregarCarrito(listProducts)
         
     }

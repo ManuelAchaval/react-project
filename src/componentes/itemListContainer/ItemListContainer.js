@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import { customFetch } from "../../assets/customFetch";
-import { productos } from "../../assets/productos";
 import ItemList from '../itemList/ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom"
 import Page from "../pagina/Page";
 import { db } from "../Firebase";
-import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 
 
@@ -21,7 +19,7 @@ const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
         const productosCollection = collection(db, "productos")
         const consulta = getDocs(productosCollection)
-        console.log(consulta)
+
         consulta
             .then(snapshot => {
                 const product = snapshot.docs.map(doc => {
@@ -35,10 +33,10 @@ const ItemListContainer = ({ greeting }) => {
             })
 
 
-        if (categoria == "tecnologia") {
+        if (categoria === "tecnologia") {
             const q = query(collection(db, "productos"), where("categoria", "==", "tecnologia"));
             getDocs(q).then((snapshot) => { setMostrar(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))) })
-        } if (categoria == "Deporte") {
+        } if (categoria === "Deporte") {
             const q = query(collection(db, "productos"), where("categoria", "==", "Deporte"));
             getDocs(q).then((snapshot) => { setMostrar(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))) })
         }

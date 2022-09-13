@@ -17,4 +17,7 @@ Para este proyecto utilicé lo siguiente:
 * Routing y navegación : react-router-dom
 * Base de datos : Firebase 
 
-La totalidad del proyecto se realizó en REACT
+La totalidad del proyecto se realizó en REACT. 
+
+[GIF demostracion del proyecto](https://drive.google.com/file/d/1MKxBve5ZUWD4TVW_aJhUirWyKQN8YT1q/view?usp=sharing)
+

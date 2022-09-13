@@ -44,7 +44,6 @@ const Cart = () => {
         <Page titulo="Carrito" subtitulo="Tus compras" >
             <h1> Nada por aqui...</h1>
             <Link to={'/'}><button className="btn btn-primary">Inicio</button></Link>
-            {/* <button className="btn boton-detalle" onClick={handleClick}>Realizar compra</button> */}
         </Page>
     )
 }
